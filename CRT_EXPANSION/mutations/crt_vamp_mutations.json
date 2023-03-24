@@ -60,6 +60,12 @@
   },
   {
     "type": "mutation",
+    "id": "BEAUTIFUL",
+    "copy-from": "BEAUTIFUL",
+    "extend": { "category": [ "VAMP" ] }
+  },
+  {
+    "type": "mutation",
     "id": "INSOMNIA",
     "copy-from": "INSOMNIA",
     "extend": { "category": [ "VAMP" ] }
@@ -120,8 +126,32 @@
   },
   {
     "type": "mutation",
+    "id": "POISRESIST",
+    "copy-from": "POISRESIST",
+    "extend": { "category": [ "VAMP" ] }
+  },
+  {
+    "type": "mutation",
     "id": "POISONOUS",
     "copy-from": "POISONOUS",
+    "extend": { "category": [ "VAMP" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "TROGLO",
+    "copy-from": "TROGLO",
+    "extend": { "category": [ "VAMP" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "TROGLO2",
+    "copy-from": "TROGLO2",
+    "extend": { "category": [ "VAMP" ] }
+  },
+  {
+    "type": "mutation",
+    "id": "TROGLO3",
+    "copy-from": "TROGLO3",
     "extend": { "category": [ "VAMP" ] }
   },
   {
