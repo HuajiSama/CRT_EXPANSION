@@ -19,21 +19,6 @@
     "armor": [ { "encumbrance": 20, "coverage": 100, "covers": [ "eyes", "mouth" ] } ]
   },
   {
-    "id": "crt_boots",
-    "copy-from": "crt_la_boots",
-    "type": "ARMOR",
-    "name": { "str": "pair of C.R.I.T boots", "str_pl": "pairs of C.R.I.T boots" },
-    "description": "A pair of standard-issue boots.  Next-gen gels keep feet comfortable and hygienic during long-term missions while absorbing shock and heat from outside-sources.  Superalloy mesh and rubber offer quite a bit of chemical protection as well.  Decently heavy though",
-    "color": "dark_gray",
-    "weight": "1500 g",
-    "price": 250000,
-    "warmth": 40,
-    "material": [ "rubber", "superalloy", "nomex" ],
-    "material_thickness": 5,
-    "environmental_protection": 5,
-    "armor": [ { "encumbrance": 17, "coverage": 100, "covers": [ "foot_l", "foot_r" ] } ]
-  },
-  {
     "id": "crt_la_boots",
     "type": "ARMOR",
     "category": "armor",
@@ -48,10 +33,86 @@
     "symbol": "[",
     "color": "dark_gray",
     "warmth": 25,
-    "material_thickness": 3,
     "environmental_protection": 2,
     "flags": [ "VARSIZE", "WATERPROOF", "STURDY" ],
-    "armor": [ { "encumbrance": 10, "coverage": 100, "covers": [ "foot_l", "foot_r" ] } ]
+    "armor": [
+      {
+        "covers": [ "foot_l", "foot_r" ],
+        "specifically_covers": [
+          "foot_toes_r",
+          "foot_toes_l",
+          "foot_ankle_r",
+          "foot_ankle_l",
+          "foot_heel_r",
+          "foot_heel_l",
+          "foot_arch_r",
+          "foot_arch_l"
+        ],
+        "material": [
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 1 },
+          { "type": "nomex", "covered_by_mat": 100, "thickness": 1 }
+        ],
+        "encumbrance": 10,
+        "coverage": 100
+      },
+      {
+        "covers": [ "foot_l", "foot_r" ],
+        "specifically_covers": [ "foot_sole_r", "foot_sole_l" ],
+        "material": [
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 5 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 1 }
+        ],
+        "coverage": 100
+      }
+    ]
+  },
+  {
+    "id": "crt_boots",
+    "copy-from": "crt_la_boots",
+    "type": "ARMOR",
+    "name": { "str": "pair of C.R.I.T boots", "str_pl": "pairs of C.R.I.T boots" },
+    "description": "A pair of standard-issue boots.  Next-gen gels keep feet comfortable and hygienic during long-term missions while absorbing shock and heat from outside-sources.  Superalloy mesh and rubber offer quite a bit of chemical protection as well.  Decently heavy though",
+    "weight": "1500 g",
+    "volume": "1500 ml",
+    "price": 250000,
+    "material": [ "rubber", "superalloy", "nomex" ],
+    "symbol": "[",
+    "color": "dark_gray",
+    "warmth": 40,
+    "environmental_protection": 5,
+    "flags": [ "VARSIZE", "WATERPROOF", "STURDY" ],
+    "armor": [
+      {
+        "covers": [ "foot_l", "foot_r" ],
+        "specifically_covers": [
+          "foot_toes_r",
+          "foot_toes_l",
+          "foot_ankle_r",
+          "foot_ankle_l",
+          "foot_heel_r",
+          "foot_heel_l",
+          "foot_arch_r",
+          "foot_arch_l"
+        ],
+        "material": [
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "nomex", "covered_by_mat": 100, "thickness": 1 }
+        ],
+        "encumbrance": 17,
+        "coverage": 100
+      },
+      {
+        "covers": [ "foot_l", "foot_r" ],
+        "specifically_covers": [ "foot_sole_r", "foot_sole_l" ],
+        "material": [
+          { "type": "rubber", "covered_by_mat": 100, "thickness": 5 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 1 }
+        ],
+        "coverage": 100
+      }
+    ]
   },
   {
     "id": "crt_gloves",
@@ -84,11 +145,40 @@
     "name": "C.R.I.T backpack",
     "description": "A standard-issue pack.  Based on the MOLLE backpack's design, this smaller pack strikes a fine balance between storage space and encumbrance and allows a larger weapon to be holstered, drawing and holstering is still rather awkward even with the magnetized clips, but practice helps.",
     "color": "dark_gray",
-    "pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "9 L", "max_contains_weight": "27 kg", "moves": 200 } ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "9 L",
+        "max_contains_weight": "27 kg",
+        "max_item_length": "50 cm",
+        "moves": 200
+      },
+      {
+        "//": "carabiner pocket",
+        "pocket_type": "CONTAINER",
+        "holster": true,
+        "max_contains_volume": "5 L",
+        "max_contains_weight": "6 kg",
+        "max_item_length": "120 cm",
+        "min_item_length": "20 cm",
+        "moves": 100,
+        "extra_encumbrance": 3,
+        "ripoff": 2,
+        "description": "Attached with a carabiner or strap.",
+        "activity_noise": { "volume": 8, "chance": 10 }
+      }
+    ],
     "material_thickness": 3,
     "material": [ "leather", "kevlar" ],
     "flags": [ "BELTED", "OVERSIZE", "NO_QUICKDRAW", "STURDY", "WATERPROOF" ],
-    "armor": [ { "encumbrance": [ 3, 20 ], "coverage": 20, "covers": [ "torso" ] } ]
+    "armor": [
+      {
+        "covers": [ "torso" ],
+        "specifically_covers": [ "torso_hanging_back" ],
+        "coverage": 20,
+        "encumbrance": [ 3, 20 ]
+      }
+    ]
   },
   {
     "id": "crt_chestrig",
@@ -106,13 +196,13 @@
     "type": "ARMOR",
     "name": { "str": "pair of C.R.I.T leg guards", "str_pl": "pairs of C.R.I.T leg guards" },
     "description": "Leg armor for those who fight.  Simple design and durable material allows for easy movement and the padding keeps the legs safe and warm in colder conditions.",
-    "color": "dark_gray",
-    "material": [ "superalloy", "rubber", "neoprene" ],
     "weight": "1300 g",
     "volume": "1500 ml",
     "price": 20000,
-    "warmth": 17,
+    "material": [ "superalloy", "rubber", "neoprene" ],
     "symbol": ":",
+    "color": "dark_gray",
+    "warmth": 17,
     "flags": [ "STURDY", "BELTED", "BLOCK_WHILE_WORN", "WATER_FRIENDLY", "ALLOWS_TAIL" ]
   },
   {
@@ -173,15 +263,35 @@
     "material": [ "kevlar", "nomex", "plastic" ],
     "symbol": "[",
     "color": "light_green",
-    "warmth": 25,
     "pocket_data": [
       { "pocket_type": "CONTAINER", "max_contains_volume": "1 L", "max_contains_weight": "3 kg", "moves": 80 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "1 L", "max_contains_weight": "3 kg", "moves": 80 }
     ],
-    "material_thickness": 5,
+    "warmth": 25,
     "environmental_protection": 25,
     "flags": [ "VARSIZE", "WATERPROOF", "HOOD", "COLLAR", "RAINPROOF", "STURDY", "RAD_RESIST", "OUTER" ],
-    "armor": [ { "encumbrance": [ 17, 25 ], "coverage": 100, "covers": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r" ] } ]
+    "armor": [
+      {
+        "covers": [ "torso" ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "nomex", "covered_by_mat": 100, "thickness": 1 },
+          { "type": "plastic", "covered_by_mat": 100, "thickness": 2 }
+        ],
+        "coverage": 100,
+        "encumbrance": [ 17, 25 ]
+      },
+      {
+        "covers": [ "leg_l", "leg_r", "arm_l", "arm_r" ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "nomex", "covered_by_mat": 100, "thickness": 1 },
+          { "type": "plastic", "covered_by_mat": 100, "thickness": 1 }
+        ],
+        "encumbrance": 17,
+        "coverage": 100
+      }
+    ]
   },
   {
     "id": "crt_legrig",
@@ -213,18 +323,36 @@
     "price": 900000000,
     "to_hit": -5,
     "bashing": 8,
-    "material": [ "steel", "kevlar" ],
+    "material": [ "kevlar", "steel" ],
     "symbol": "[",
     "color": "cyan",
-    "warmth": 20,
     "pocket_data": [
       { "pocket_type": "CONTAINER", "max_contains_volume": "1 L", "max_contains_weight": "3 kg", "moves": 80 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "1 L", "max_contains_weight": "3 kg", "moves": 80 }
     ],
-    "material_thickness": 4,
+    "warmth": 20,
     "environmental_protection": 5,
     "flags": [ "VARSIZE", "STURDY", "BELTED" ],
-    "armor": [ { "encumbrance": [ 27, 35 ], "coverage": 90, "covers": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r" ] } ]
+    "armor": [
+      {
+        "covers": [ "torso" ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "steel", "covered_by_mat": 100, "thickness": 2 }
+        ],
+        "coverage": 90,
+        "encumbrance": [ 27, 35 ]
+      },
+      {
+        "covers": [ "leg_l", "leg_r", "arm_l", "arm_r" ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 2 },
+          { "type": "steel", "covered_by_mat": 100, "thickness": 2 }
+        ],
+        "coverage": 90,
+        "encumbrance": 27
+      }
+    ]
   },
   {
     "id": "crt_earmor_boots",
@@ -241,10 +369,38 @@
     "symbol": "[",
     "color": "dark_gray",
     "warmth": 5,
-    "material_thickness": 3,
     "environmental_protection": 4,
     "flags": [ "VARSIZE", "WATERPROOF", "STURDY", "OUTER", "OVERSIZE" ],
-    "armor": [ { "encumbrance": 30, "coverage": 100, "covers": [ "foot_l", "foot_r" ] } ]
+    "armor": [
+      {
+        "covers": [ "foot_l", "foot_r" ],
+        "specifically_covers": [
+          "foot_toes_r",
+          "foot_toes_l",
+          "foot_ankle_r",
+          "foot_ankle_l",
+          "foot_heel_r",
+          "foot_heel_l",
+          "foot_arch_r",
+          "foot_arch_l"
+        ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 1.5 }
+        ],
+        "coverage": 100,
+        "encumbrance": 30
+      },
+      {
+        "covers": [ "foot_l", "foot_r" ],
+        "specifically_covers": [ "foot_sole_r", "foot_sole_l" ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 5 }
+        ],
+        "coverage": 100
+      }
+    ]
   },
   {
     "id": "crt_sarmor",
@@ -255,7 +411,7 @@
     "weight": "5439 g",
     "volume": "6250 ml",
     "price": 900000000,
-    "material": [ "neoprene", "kevlar", "superalloy" ],
+    "material": [ "kevlar", "neoprene", "superalloy" ],
     "symbol": "[",
     "color": "light_blue",
     "warmth": 20,
@@ -266,7 +422,28 @@
     "material_thickness": 2,
     "environmental_protection": 3,
     "flags": [ "VARSIZE", "STURDY" ],
-    "armor": [ { "encumbrance": [ 3, 7 ], "coverage": 100, "covers": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r" ] } ]
+    "armor": [
+      {
+        "covers": [ "torso" ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 0.75 },
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 0.5 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 0.75 }
+        ],
+        "coverage": 100,
+        "encumbrance": [ 3, 7 ]
+      },
+      {
+        "covers": [ "leg_l", "leg_r", "arm_l", "arm_r" ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 0.75 },
+          { "type": "neoprene", "covered_by_mat": 100, "thickness": 0.5 },
+          { "type": "superalloy", "covered_by_mat": 100, "thickness": 0.75 }
+        ],
+        "coverage": 100,
+        "encumbrance": 3
+      }
+    ]
   },
   {
     "id": "crt_warmor",
@@ -280,14 +457,32 @@
     "material": [ "qt_steel", "kevlar" ],
     "symbol": "[",
     "color": "light_green",
-    "warmth": 25,
     "pocket_data": [
       { "pocket_type": "CONTAINER", "max_contains_volume": "2 L", "max_contains_weight": "3 kg", "moves": 80 },
       { "pocket_type": "CONTAINER", "max_contains_volume": "2 L", "max_contains_weight": "3 kg", "moves": 80 }
     ],
-    "material_thickness": 3,
+    "warmth": 25,
     "environmental_protection": 10,
     "flags": [ "VARSIZE", "WATERPROOF", "OUTER", "OVERSIZE", "COLLAR", "STURDY", "NO_QUICKDRAW" ],
-    "armor": [ { "encumbrance": [ 24, 40 ], "coverage": 100, "covers": [ "torso", "leg_l", "leg_r", "arm_l", "arm_r" ] } ]
+    "armor": [
+      {
+        "covers": [ "torso" ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "qt_steel", "covered_by_mat": 100, "thickness": 1.5 }
+        ],
+        "coverage": 100,
+        "encumbrance": [ 24, 40 ]
+      },
+      {
+        "covers": [ "leg_l", "leg_r", "arm_l", "arm_r" ],
+        "material": [
+          { "type": "kevlar", "covered_by_mat": 100, "thickness": 1.5 },
+          { "type": "qt_steel", "covered_by_mat": 100, "thickness": 1.5 }
+        ],
+        "coverage": 100,
+        "encumbrance": 24
+      }
+    ]
   }
 ]
