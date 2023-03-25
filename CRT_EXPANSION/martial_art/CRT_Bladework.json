@@ -9,8 +9,8 @@
   },
   {
     "id": "book_martial",
-    "type": "item_group",
     "copy-from": "book_martial",
+    "type": "item_group",
     "extend": { "items": [ [ "manual_crt_blade", 5 ] ] }
   },
   {
