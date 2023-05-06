@@ -42,7 +42,7 @@
     "volume": "14 L",
     "price": 900000000,
     "to_hit": -5,
-    "bashing": 8,
+    "melee_damage": { "bash": 8 },
     "material": [ "superalloy", "nomex", "kevlar" ],
     "symbol": "[",
     "color": "light_gray",

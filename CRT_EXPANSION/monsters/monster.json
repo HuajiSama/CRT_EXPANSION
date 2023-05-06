@@ -21,9 +21,7 @@
     "melee_dice_sides": 1,
     "melee_damage": [ { "damage_type": "cut", "amount": 3 } ],
     "dodge": 3,
-    "armor_bash": 10,
-    "armor_cut": 16,
-    "armor_bullet": 13,
+    "armor": { "bash": 10, "cut": 16, "stab": 0, "acid": 0, "bullet": 13, "electric": 0 },
     "harvest": "zombie",
     "special_attacks": [ [ "TENTACLE", 2 ], [ "scratch", 10 ] ],
     "flags": [ "HEARS", "GOODHEARING", "WARM", "CLIMBS", "NOHEAD", "POISON", "NO_BREATHE" ]
@@ -50,8 +48,7 @@
     "melee_dice_sides": 5,
     "melee_damage": [ { "damage_type": "cut", "amount": 5 } ],
     "dodge": 3,
-    "armor_bash": 20,
-    "armor_cut": 40,
+    "armor": { "bash": 20, "cut": 40, "stab": 0, "acid": 0, "bullet": 0, "electric": 0 },
     "harvest": "zombie",
     "special_attacks": [ [ "TENTACLE", 7 ], [ "scratch", 8 ] ],
     "flags": [ "WARM", "CLIMBS", "NOHEAD", "POISON", "NO_BREATHE" ]

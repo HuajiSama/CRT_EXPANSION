@@ -56,7 +56,7 @@
     "volume": "1500 ml",
     "price": 100000,
     "to_hit": -1,
-    "bashing": 2,
+    "melee_damage": { "bash": 2 },
     "material": [ "cotton", "plastic", "rubber" ],
     "symbol": "[",
     "color": "dark_gray",

@@ -84,7 +84,7 @@
     "volume": "6250 ml",
     "price": 7000000,
     "to_hit": -3,
-    "bashing": 6,
+    "melee_damage": { "bash": 6 },
     "material": [ "kevlar", "superalloy" ],
     "symbol": "[",
     "color": "light_gray",

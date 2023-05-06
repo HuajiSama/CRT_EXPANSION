@@ -695,8 +695,8 @@ msgstr "一把简单的组合枪支。这只军用级的半自动卡宾枪结合
 #: mods\CRT_EXPANSION\items\crt_gun.json
 msgid "C.R.I.T Fire Glove"
 msgid_plural "C.R.I.T Fire Gloves"
-msgstr[0] "C.R.I.T 火焰手枪"
-msgstr[1] "C.R.I.T 火焰手枪"
+msgstr[0] "C.R.I.T 喷火手套"
+msgstr[1] "C.R.I.T 喷火手套"
 
 #. ~ Description of "C.R.I.T Fire Glove"
 #: mods\CRT_EXPANSION\items\crt_gun.json
